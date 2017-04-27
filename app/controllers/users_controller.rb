@@ -1,11 +1,30 @@
 class UsersController < ApplicationController
-    before_action :require_login, except: [:new,:create]
-    before_action :require_correct_user, only: [:show,:edit, :update, :delete]
+    # before_action :require_login, except: [:new,:create]
+    # before_action :require_correct_user, only: [:show,:edit, :update, :delete]
     def index
     end
 
     def new
     end
+
+
+    def blog
+        render "/users/blog"
+    end
+
+    def media
+        render "/users/media"
+    end
+
+    def contact
+        render "/users/contact"
+    end
+
+    def cart
+        render "/users/cart"
+    end
+
+
 
     def create
         @user=User.new(user_params)
@@ -17,6 +36,9 @@ class UsersController < ApplicationController
         redirect_to :back
     end
 end
+
+
+
 
 private
     def user_params
