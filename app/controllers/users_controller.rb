@@ -23,6 +23,11 @@ class UsersController < ApplicationController
     def cart
         render "/users/cart"
     end
+    
+    def product
+        render "/products/product"
+    end
+
 
 
 
