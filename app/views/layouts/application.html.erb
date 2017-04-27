@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SavvyHero</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <!-- the line below says go run current_user method if it returns a user do whatever is in this if statement -->
+  <% if current_user %>
+    <h1>Welcome! <%= current_user.first_name %></h1>
+    <a href="/logout"Logout></a>
+
+  <%%>
+<%= render 'shared/header'%>
+<%= yield %>
+<%= render 'shared/footer'%>
+</body>
+</html>
