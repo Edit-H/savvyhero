@@ -2,8 +2,13 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
   resources :sessions, only:[:new, :create, :destroy]
   resources :users, only:[:index, :new, :create]
+  get "product" => 'products#product'
+  post "process" => "product#index"
+  
+
 
     get  '/'  => 'users#index'
     get '/blog' => 'users#blog'
