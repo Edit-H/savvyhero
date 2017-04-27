@@ -1,8 +1,14 @@
+<div> <a href="/shoppin_cart" ><%= image_tag("icons/shopping_cart.png", width: "150px", height: "150px") %></a> <strong><%= @item %></strong> Item(s) in your cart! </div>
 <div class="title">
   <h2>MENU</h2>
 </div>
-<div class="menu">
+<!-- <div class="menu">
+  <form class="products" action="/process" method="post">
+
   <% @products.each do |product| %>
-    <%= product.name %>
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">​
+    <input type="radio" name="product" value="<%= product.name %><%= product.quantity%><%= product.price %> checked">
+    <input type="submit" value="Add to Cart"/>
   <% end %>
+</form> -->
 </div>
