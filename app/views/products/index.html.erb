@@ -1,3 +1,8 @@
-<div class="menu">
+<div class="title">
   <h2>MENU</h2>
+</div>
+<div class="menu">
+  <% @products.each do |product| %>
+    <%= product.name %>
+  <% end %>
 </div>
