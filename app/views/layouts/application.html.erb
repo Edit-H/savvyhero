@@ -11,8 +11,8 @@
   <% if current_user %>
     <h1>Welcome! <%= current_user.first_name %></h1>
     <a href="/logout"Logout></a>
-
-  <%%>
+  <% end %>
+  
 <%= render 'shared/header'%>
 <%= yield %>
 <%= render 'shared/footer'%>
