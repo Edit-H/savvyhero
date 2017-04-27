@@ -5,18 +5,17 @@ Rails.application.routes.draw do
 
   resources :sessions, only:[:new, :create, :destroy]
   resources :users, only:[:index, :new, :create]
-  get "product" => 'products#product'
-  post "process" => "product#index"
-  
+  get '/product' => 'products#show'
+  # get '/product/show' => 'products#show'
 
-
-    post "process" => "product#index"
-  
+    post "/process" => "product#index"
+    
     get  '/'  => 'users#index'
     get '/blog' => 'users#blog'
     get '/media' => 'users#media'
     get '/cart' => 'users#cart'
     get '/contact' => 'users#contact'
     get '/product' => 'users#product'
+
 
 end
