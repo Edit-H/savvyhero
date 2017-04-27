@@ -1,0 +1,27 @@
+div{
+    outline: red dotted 1px;
+}
+header {
+    display: inline-block;
+    font-family: sans-serif;
+    width: 2000px;
+    height: 336px;
+}
+.col-md-2 {
+    display: inline-block;
+    width: 350px;
+}
+.col-md-8{
+    display: inline-block;
+    vertical-align: top;
+}
+ul{
+    list-style: none;
+}
+li{
+    display: inline;
+}
+.search{
+    width: 320px;
+    display: inline-block;
+}

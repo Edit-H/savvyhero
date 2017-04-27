@@ -13,25 +13,3 @@
  *= require_tree .
  *= require_self
  */
- #nav_bar{
-     display: inline-block;
-     vertical-align: top;
- }
-  #nav{
-      display: inline-block;
-      font-size: 22px;
-      font-family: sans-serif;
-      width: 860px;
-      height: 100px;
-      vertical-align: top;
-  }
-  #nav ul{
-      list-style: none;
-  }
-  #nav ul li{
-      display: inline;
- }
- .search{
-     width: 320px;
-     display: inline-block;
- }

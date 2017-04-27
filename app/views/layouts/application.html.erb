@@ -7,14 +7,35 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <!-- the line below says go run current_user method if it returns a user do whatever is in this if statement -->
+
+  <header class="navbar navbar-fixed-top navbar-inverse">
+   <div class="container">
+     <div class="col-md-2">
+         <%= image_tag("logos/Logo.png", width: "250px", height: "300px") %>
+        </div>
+        <nav class="col-md-8">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="/media">Media</a></li>
+                <li><a href="/blog">Blogs</a></li>
+                <li><a href="/cart">Shopping Cart</a></li>
+                <li><a href="/contact">Sign In</a> | <a href="/contact">Sign Up</a></li>
+                <li><form class="search">
+                    <input type="text" placeholder="Search..." required>
+                    <input type="submit" value="Search">
+                </form></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
   <% if current_user %>
     <h1>Welcome! <%= current_user.first_name %></h1>
     <a href="/logout"Logout></a>
   <% end %>
-  
-<%= render 'shared/header'%>
-<%= yield %>
-<%= render 'shared/footer'%>
+
+  <%= yield %>
+  <%= render 'shared/footer'%>
 </body>
 </html>
