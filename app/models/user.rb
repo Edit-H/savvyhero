@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
   def email_lowercase
       email.downcase!
   end
+
+  def cart_count
+    $redis.scard "cart#{id}"
+  end
 end

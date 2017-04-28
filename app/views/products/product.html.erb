@@ -1,3 +1,24 @@
-<div> <a href="/shopping_cart" ><%= image_tag("icons/shopping_cart.png", width: "150px", height: "150px") %></a> <strong><%= @item %></strong> Item(s) in your cart! </div>
+<div> <a href="/cart" ><%= image_tag("icons/shopping_icon.png", width: "150px", height: "150px") %></a> <strong><%= @item %></strong> Item(s) in your cart! </div>
+<% if flash[:success] %>
+  		<div id="success">
+  			<p><%= flash[:success] %></p>
+		</div>
+	<% end %>
 <div class="title">
   <h2>MENU</h2>
+
+  <div class=“menu”>
+    <span><%= image_tag("products/cupcakes.JPG", width: "230px", height: "250px") %></span>
+    <span><%= image_tag("products/cakepops.JPG", width: "230px", height: "250px") %></span>
+    <span><%= image_tag("products/macaroons.JPG", width: "230px", height: "250px") %></span>
+    <span><%= image_tag("products/cookies.JPG", width: "230px", height: "250px") %></span>
+    <form action=“/process” method=“post”>
+    <input type="hidden" name="authenticity_token" value="token_value">
+      <% @products.each do |product| %>
+        <h5><%= product.name %> - Pack of <%= product.quantity %> at $<%= product.price %>
+        <input type="button" value="Add to Cart"> </h5>
+        <br>
+      <% end %>
+    </form>
+
+</div>
