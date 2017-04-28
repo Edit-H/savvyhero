@@ -19,7 +19,8 @@ Rails.application.routes.draw do
     get '/new' => 'users#new'
     get '/product' => 'users#product'
     get '/product/show' => 'products#show'
-    post "/process" => "products#index"
+    post 'product_add' => "products#index"
+    post 'process/to_cart' => 'products#process_to_cart'
     # post "/cart" => ""
 
 end
