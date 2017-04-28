@@ -5,10 +5,10 @@ class ProductsController < ApplicationController
     @item = session[:item]
   end
   def show
-    @products=Product.all
-    redirect_to  "product"
+    @products = Product.all
+    render 'product'
   end
 
-  
+
 
 end

@@ -1,3 +1,18 @@
-<div> <a href="/shopping_cart" ><%= image_tag("icons/shopping_cart.png", width: "150px", height: "150px") %></a> <strong><%= @item %></strong> Item(s) in your cart! </div>
+<div> <a href="/shoppin_cart" ><%= image_tag("icons/shopping_cart.png", width: "150px", height: "150px") %></a> <strong><%= @item %></strong> Item(s) in your cart! </div>
 <div class="title">
   <h2>MENU</h2>
+
+  <div class=“menu”>
+    <%= image_tag("products/cupcakes.JPG", width: "230px", height: "250px") %>
+    <%= image_tag("products/cakepops.JPG", width: "230px", height: "250px") %>
+    <%= image_tag("products/macaroons.JPG", width: "230px", height: "250px") %>
+    <%= image_tag("products/cookies.JPG", width: "230px", height: "250px") %>
+    <form action=“/process” method=“post”>
+    <input type="hidden" name="authenticity_token" value="token_value">
+      <% @products.each do |product| %>
+        <h5><input type=“checkbox” name=“products” > <%= product.name %> - Pack of <%= product.quantity %> at $<%= product.price %>
+        <input type="button" value="Add to Cart"> </h5>
+      <% end %>
+    </form>
+
+</div>

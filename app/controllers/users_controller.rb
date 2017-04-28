@@ -4,25 +4,27 @@ class UsersController < ApplicationController
     def index
     end
 
-    def new
-    end
+    # def new
+    # end
 
 
     def blog
-        render "/users/blog"
+        render "/blogs/blog"
     end
 
     def media
-        render "/users/media"
+        render "/medias/media"
     end
 
-    def contact
-        render "/users/contact"
+    def new
+        render "/contacts/register"
     end
 
     def cart
+
         render layout: "checkout"
         # render "/users/cart"
+
     end
 
     def product

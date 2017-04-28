@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # get '/product' => 'products#show'
   # get '/product/show' => 'products#show'
 
-    post "/process" => "product#index"
+    post "/process" => "products#index"
 
     # get  '/'  => 'users#index'
     get '/blog' => 'users#blog'
@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     get '/cart' => 'users#cart'
     get '/new' => 'users#new'
     get '/product' => 'users#product'
+    get '/product/show' => 'products#show'
 
 
 end
