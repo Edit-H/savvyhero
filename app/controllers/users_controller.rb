@@ -21,9 +21,10 @@ class UsersController < ApplicationController
     end
 
     def cart
-        render "/users/cart"
+        render layout: "checkout"
+        # render "/users/cart"
     end
-    
+
     def product
         render "/products/product"
     end
