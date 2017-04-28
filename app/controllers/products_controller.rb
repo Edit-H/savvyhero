@@ -1,10 +1,5 @@
 class ProductsController < ApplicationController
 
-  def index
-    session[:item] ||=0
-    @item = session[:item]
-    redirect_to 'process_to_cart'
-  end
   def show
     @products = Product.all
     @line_item = current_order.line_items.new
@@ -12,17 +7,18 @@ class ProductsController < ApplicationController
   end
 
   def process_to_cart
-
-    session[:items] = session[:item] + 1
-
-
+  
+    if session[:item] == nil
+      session[:item] = 1
+    else
+      session[:item] = session[:item]+1
+    end
     session[:cart] = params[:product]
-
     # Save success message to flash to show it once
     flash[:success] = " #{ session[:item] } item(s) added to your cart!"
 
     # To prevent submission of form with page reload
-    redirect_to 'product'
+    redirect_to '/cart'
 end
 
   def cart

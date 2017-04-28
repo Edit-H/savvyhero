@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
     # before_action :require_login, except: [:new,:create]
     # before_action :require_correct_user, only: [:show,:edit, :update, :delete]
+
     def index
-        render layout: "index"
+      session[:item] ||=0
+      @item = session[:item]
+      # redirect_to '/process/to_cart'
     end
 
     # def new
