@@ -31,6 +31,10 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'activeadmin', github: 'activeadmin'
 gem 'thor', '0.19.1'
 gem 'devise'
+
+gem 'redis', '~> 3.0.1'
+# Redis driver
+gem 'hiredis', '~> 0.4.5'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
