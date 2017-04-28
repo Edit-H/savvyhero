@@ -9,19 +9,19 @@ class UsersController < ApplicationController
 
 
     def blog
-        render "/blogs/blog"
+        render "/users/blog"
     end
 
     def media
-        render "/medias/media"
+        render "/users/media"
     end
 
     def contact
-        render "/contacts/contact"
+        render "/users/contact"
     end
 
     def cart
-        render "/carts/cart"
+        render "/users/cart"
     end
     
     def product
