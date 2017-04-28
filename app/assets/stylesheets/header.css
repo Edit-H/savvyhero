@@ -1,27 +1,27 @@
 div{
     outline: red dotted 1px;
 }
-header {
+#container{
+    width: 1400px;
+    height: 900px;
+}
+nav {
     display: inline-block;
     font-family: sans-serif;
-    width: 2000px;
-    height: 336px;
+    width: auto;
 }
 .col-md-2 {
     display: inline-block;
-    width: 350px;
-}
-.col-md-8{
-    display: inline-block;
-    vertical-align: top;
+    width: 200px;
 }
 ul{
     list-style: none;
 }
 li{
     display: inline;
+    padding-right: 25px;
 }
-.search{
+/*.search{
     width: 320px;
     display: inline-block;
-}
+}*/
