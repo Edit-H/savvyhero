@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     def index
       session[:item] ||=0
       @item = session[:item]
+      render layout: "index"
       # redirect_to '/process/to_cart'
     end
 
