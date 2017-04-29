@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     end
 
     def new
-        render "/contacts/register"
+        render "new"
     end
 
     def cart
