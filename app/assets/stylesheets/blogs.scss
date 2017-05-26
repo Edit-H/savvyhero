@@ -1,3 +1,31 @@
 // Place all the styles related to the blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#blog {
+    font-family: 'Open Sans Condensed';
+    margin-top: 22px;
+}
+
+#content {
+    font-size: 18px;
+}
+
+#entry_one, #entry_two {
+    text-align: center;
+    width: 100%;
+    border: 2px solid black;
+}
+
+#entry_two {
+    margin-top: 80px;
+}
+
+.small {
+    height: 450px;
+    overflow: hidden;
+}
+
+.big {
+    height: auto;
+}

@@ -1,31 +1,24 @@
-div{
-    outline: red dotted 1px;
+#navs {
+    margin-top: 10px;
+    font-size: 25px;
 }
-/*#container{
-    width: 1400px;
-    height: 900px;
-}*/
-/*.row {
-    display: inline-block;
-}*/
-/*.col-md-2 {
-    display: inline-block;
-    width: 175px;
-}*/
-/*.navbar{
-    display: inline-block;
-}*/
-/*button{
-    display: inline-block;
-}*/
-/*ul{
-    list-style: none;
+
+#nav_link {
+    margin-top: 42px;
 }
-li{
-    display: inline;
-    padding-right: 25px;
-}*/
-/*.search{
-    width: 320px;
-    display: inline-block;
-}*/
+
+#cart {
+  text-align: right;
+  font-family: 'Indulge Script';
+  font-size: 15px;
+}
+
+a{
+    color: black;
+}
+
+#contact_info{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}

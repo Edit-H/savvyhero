@@ -1,3 +1,15 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@font-face {
+    font-family: 'Indulge Script';
+    src: url('/assets/Indulge_Script')
+}
+
+h2{
+      font-family: 'Indulge Script';
+}
+.new_customer{
+    margin: 190px;
+}

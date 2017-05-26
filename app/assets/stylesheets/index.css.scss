@@ -1,3 +1,7 @@
+// div{
+//     outline: red dotted 1px;
+// }
+
 @font-face {
     font-family: 'Indulge Script';
     src: url('/assets/Indulge_Script')
@@ -12,4 +16,13 @@
     font-family: 'Indulge Script';
     font-size: 18px;
     font-style: bold;
+}
+
+#cover{
+    text-align: center;
+    margin-top: 22px;
+}
+
+#cover_image{
+    width: 90%;
 }
