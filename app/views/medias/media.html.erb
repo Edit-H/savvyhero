@@ -6,129 +6,143 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <style>
-  div{
-  	outline: dotted red 1px;
-  }
-
-  .carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
-      width: 70%;
-      margin: auto;
-  }
-  h3{
-  	
-    text-align: center;
-  }
-  .sleep{
-    text-align: center;
-    
-    display:block;
-  }
-  iframe{
-  	display: block;
-    margin: auto;
-  }
-  
-  .container{
-  	 margin: auto;
-    width: 50%;
-  }
-  </style>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700" rel="stylesheet">
 </head>
-<body>
-<h3>Gallery</h3>
-<div class="container">
-  <br>
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="3"></li>
-    </ol>
+    <body>
+        <div class="container">
+            <%= render 'shared/header'%>
+            <div id="gallery">
+                <p id="title">Gallery</p>
+                    <div class="container" id="media_section">
+                      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                          <li data-target="#myCarousel" data-slide-to="1"></li>
+                          <li data-target="#myCarousel" data-slide-to="2"></li>
+                          <li data-target="#myCarousel" data-slide-to="3"></li>
+                        </ol>
 
-    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-inner" role="listbox">
 
-      <div class="item active">
-        <img src="assets/baked_goods/cheese_roll.png" alt="Chania">
-        <div class="carousel-caption">
-          <h3>Cheese Rolls</h3>
-          <p>Freshly Baked with Love.</p>
-        </div>
-      </div>
+                          <div class="item active">
+                            <img src="assets/baked_goods/nowrooz_cookies.jpg" class="image" alt="Cookies">
+                            <div class="carousel-caption">
+                              <h3 class="gal">Cookies</h3>
+                              <p class="gal">Freshly Baked with Love.</p>
+                            </div>
+                          </div>
+                          <div class="item">
+                            <img src="assets/baked_goods/halloween_cupcakes.jpg" class="image" alt="Cupcake" >
+                            <div class="carousel-caption">
+                              <h3 class="gal">Cupcakes</h3>
+                              <p class="gal">Fun and Decorative</p>
+                            </div>
+                          </div>
+                          <div class="item">
+                            <img src="assets/baked_goods/french_macaroons.jpg" class="image" alt="Flower">
+                            <div class="carousel-caption">
+                              <h3 class="gal">French Macaroons</h3>
+                              <p class="gal">Délicieux!</p>
+                            </div>
+                          </div>
+                          <div class="item">
+                            <img src="assets/baked_goods/cereal_bar.jpg" class="image" alt="Flower">
+                            <div class="carousel-caption">
+                              <h3 class="gal">Cereal Bar</h3>
+                              <p class="gal">These will knock a bowl of plain cereal off the shelf</p>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Controller for Carousel -->
+                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+                    </div>
+                </div>
+                    <div id="youtube_gallery">
+                            <h3 class="gal">Watch and Learn On Youtube</h3>
+                                <a class="yt_link" href="https://www.youtube.com/channel/UChDhIs-1KHBw6Q_oaP1lhhw">Click here to visit my channel!</a>
+                        <div id="video_gallery">
+                            <div class="vid-main-wrapper clearfix">
+                                <!-- THE YOUTUBE PLAYER -->
+                                      <div class="vid-container">
+                                          <iframe id="vid_frame" src="https://www.youtube.com/embed/qKaCKmZ4qWo?rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe>
+                                      </div>
 
-      <div class="item">
-        <img src="assets/baked_goods/cream_puffs.png" alt="Chania">
-        <div class="carousel-caption">
-          <h3>Cream Puffs</h3>
-          <p>Full of Creamy Goodness</p>
-        </div>
-      </div>
-    
-      <div class="item">
-        <img src="assets/baked_goods/french_macaroons.jpg" alt="Flower">
-        <div class="carousel-caption">
-          <h3>French Macaroons</h3>
-          <p>Délicieux!</p>
-        </div>
-      </div>
+                                      <!-- THE PLAYLIST -->
+                                      <div class="vid-list-container">
+                                            <ol id="vid-list">
+                                              <li>
+                                                <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='https://www.youtube.com/embed/qKaCKmZ4qWo?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                                                  <span class="vid-thumb"><img width=72 src="https://i.ytimg.com/vi/qKaCKmZ4qWo/hqdefault.jpg?custom=true&w=336&h=188&stc=true&jpg444=true&jpgq=90&sp=68&sigh=6wyT6jtvGEOctPAM37oXe9Cr05g" /></span>
+                                                  <div class="desc">No Churn Saffron Ice Cream</div>
+                                                </a>
+                                              </li>
+                                              <li>
+                                                <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='https://www.youtube.com/embed/aZp_AzkPJn4?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                                                  <span class="vid-thumb"><img width=72 src="https://i.ytimg.com/vi/aZp_AzkPJn4/hqdefault.jpg?custom=true&w=336&h=188&stc=true&jpg444=true&jpgq=90&sp=68&sigh=4vEqcVfUwf1Div5nR_V-g68pkZs" /></span>
+                                                  <div class="desc">Easter Chocolate Dessert</div>
+                                                </a>
+                                              </li>
+                                              <li>
+                                                <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='https://www.youtube.com/embed/ZhwB1SLVfWo?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                                                  <span class="vid-thumb"><img width=72 src="https://i.ytimg.com/vi/ZhwB1SLVfWo/hqdefault.jpg?custom=true&w=336&h=188&stc=true&jpg444=true&jpgq=90&sp=68&sigh=SEIK1Fhn5bIov6g3K1GmmFb5quQ" /></span>
+                                                  <div class="desc">Healthy Cereal Bars</div>
+                                                </a>
+                                              </li>
+                                              <li>
+                                                <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='https://www.youtube.com/embed/U09yfWg3Pm4?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                                                  <span class="vid-thumb"><img width=72 src="https://i.ytimg.com/vi/U09yfWg3Pm4/hqdefault.jpg?custom=true&w=336&h=188&stc=true&jpg444=true&jpgq=90&sp=68&sigh=Y34RR_BLIkm-59TLLXgCF3Xtdh0" /></span>
+                                                  <div class="desc">How to Make Pumpkin Jam!</div>
+                                                </a>
+                                              </li>
+                                              <li>
+                                                <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='https://www.youtube.com/embed/1B9PzTjDtqc?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                                                  <span class="vid-thumb"><img width=72 src="https://i.ytimg.com/vi/1B9PzTjDtqc/hqdefault.jpg?custom=true&w=336&h=188&stc=true&jpg444=true&jpgq=90&sp=68&sigh=KeUoDtGwnFe8_lXUOm8e0xOFJ4E" /></span>
+                                                  <div class="desc">Cookie Haftseen-Happy Persian New Year!</div>
+                                                </a>
+                                              </li>
+                                              <li>
+                                                <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='https://www.youtube.com/embed/I52z8YXXSRE?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                                                  <span class="vid-thumb"><img width=72 src="https://i.ytimg.com/vi/I52z8YXXSRE/hqdefault.jpg?custom=true&w=336&h=188&stc=true&jpg444=true&jpgq=90&sp=68&sigh=-zqow03Rj7rS_3uL6rDI3FCkmqA" /></span>
+                                                  <div class="desc">How to make Giant Rose Meringues!</div>
+                                                </a>
+                                              </li>
+                                              <li>
+                                                <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='https://www.youtube.com/embed/odM3TsD23UQ?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                                                  <span class="vid-thumb"><img width=72 src="https://i.ytimg.com/vi/odM3TsD23UQ/hqdefault.jpg?custom=true&w=336&h=188&stc=true&jpg444=true&jpgq=90&sp=68&sigh=WSaXKTljSHzadMGo9mPhOJOSN1o" /></span>
+                                                  <div class="desc">How to make Boorsagh! (Armenian pastry)</div>
+                                                </a>
+                                              </li>
+                                              <li>
+                                                <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='https://www.youtube.com/embed/uOeMJr0IZpk?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                                                  <span class="vid-thumb"><img width=72 src="https://i.ytimg.com/vi/uOeMJr0IZpk/hqdefault.jpg?custom=true&w=336&h=188&stc=true&jpg444=true&jpgq=90&sp=68&sigh=73NgUg3PcjUU5ajO44dYuFzrIrs" /></span>
+                                                  <div class="desc">Little Mermaid Birthday Party</div>
+                                                </a>
+                                              </li>
 
-      <div class="item">
-        <img src="assets/baked_goods/cereal_bar.jpg" alt="Flower">
-        <div class="carousel-caption">
-          <h3>Cereal Bar</h3>
-          <p>These will knock a bowl of plain cereal off the shelf</p>
-        </div>
-      </div>
-  
-    </div>
-
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</div>
-
-</body>
+                                            </ul>
+                                       </div>
+                                       <script type="text/javascript">
+                                       $(document).ready(function() {
+                                           $(".vid-item").each(function(index) {
+                                               $(this).on("click", function() {
+                                                   var current_index = index + 1;
+                                                   $(".vid-item .thumb").removeClass("active");
+                                                   $(".vid-item:nth-child(" + current_index + ") .thumb").addClass("active");
+                                               });
+                                           });
+                                       });
+                                       </script>
+                                   </div>
+                               </div>
+            </div>
+    </body>
 </html>
-
-
-<br>
-<div class="frame">
-	<h3>Watch and Learn On Youtube</h3>
-	<a class="sleep" href="https://www.youtube.com/channel/UChDhIs-1KHBw6Q_oaP1lhhw">Click to visit my Youtube page</a>
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/aZp_AzkPJn4" frameborder="0" allowfullscreen></iframe>
-</div>
-<br>
-<div class="frame">
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/1B9PzTjDtqc" frameborder="0" allowfullscreen></iframe>
-</div>
-<br>
-<div  class="frame">
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/qKaCKmZ4qWo" frameborder="0" allowfullscreen></iframe>
-</div>
-<br>
-<div class="frame">
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/ZhwB1SLVfWo" frameborder="0" allowfullscreen></iframe>
-</div>
-
-<br>
-<div class="frame">
-	
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/KFFS3paYC6w" frameborder="0" allowfullscreen></iframe>
-</div>
-<br>
-<div class="frame">
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/uOeMJr0IZpk" frameborder="0" allowfullscreen></iframe>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>

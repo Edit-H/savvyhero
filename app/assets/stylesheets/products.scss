@@ -1,26 +1,27 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.menu{
-  display: inline-block;
-  width: 230px;
-  height: 250px;
-  margin: 30px;
+
+#products {
+    margin-top: 22px;
+}
+
+h1, h2{
   text-align: center;
 }
-h2{
-  font-family: sans-serif;
-  text-align: center;
+
+.content{
+    font-size: 18px;
+    font-family: 'Open Sans Condensed';
 }
-// form{
-//   padding-left: 50px;
-// }
-span{
-  padding: 20px;
-  margin-right: 30px;
-  margin-top: 30px;
-  margin-bottom: 50px;
+
+#chocolate_covered, #cakepops, #macaroons, #cupcakes{
+    text-align: center;
+    padding-bottom: 10px;
 }
-a{
-  text-align: right;
+
+.table{
+    overflow-x: scroll;
+    width: auto;
+    display: inline-block;
 }

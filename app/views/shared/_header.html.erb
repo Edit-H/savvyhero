@@ -1,0 +1,12 @@
+<div class="row" id="navs">
+    <div class="col-md-3">
+        <a href="/"><%= image_tag("logos/logo2.jpg", width: "125px", height: "150px") %></a>
+    </div>
+    <div class="col-md-1" id="nav_link"><a href="/"> Home </a></div>
+    <div class="col-md-1" id="nav_link"><a href="/product/show"> Menu </a></div>
+    <div class="col-md-1" id="nav_link"><a href="/media">Media</a></div>
+    <div class="col-md-1" id="nav_link"><a href="/blog">Blogs</a></div>
+    <div class="col-md-2" id="nav_link"><a href="/sessions/new">Sign In</a> | <a href="/users/new">Sign Up</a></li></div>
+    <div class="col-md-3" id="cart"><a href="/cart"><%= image_tag("icons/shopping_icon.png", width: "45px", height: "45px") %></a> <strong><%= @item %></strong> Item(s) in your cart!
+    </div>
+</div>

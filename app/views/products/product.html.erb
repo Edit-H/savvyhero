@@ -1,27 +1,140 @@
-<div> <a href="/cart" ><%= image_tag("icons/shopping_icon.png", width: "100px", height: "100px") %></a> <strong><%= @item %></strong> Item(s) in your cart! </div>
-<% if flash[:success] %>
-  		<div id="success">
-  			<p><%= flash[:success] %></p>
-		</div>
-	<% end %>
-<div class="title">
-  <h2>MENU</h2>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+</head>
+<div class="container">
+    <%= render 'shared/header'%>
+        <div id="cart">
+        <% if flash[:success] %>
+            <div id="success">
+                <p><%= flash[:success] %></p>
+            </div>
+            <% end %>
+        </div>
+            <div id="products">
+                  <p id="title">Menu</p>
+              <div class=“row” id="cupcakes">
+                  <h2>Cupcakes</h2>
+                <div class="col-md-6">
+                    <%= image_tag("products/cupcakes.JPG", width: "200px", height: "200px") %>
+                    <p class ="content"> QTY : 12 </p>
+                    <p class ="content">$33.50</p>
+                    <p class ="content"><label>Pick a Flavor:</label>
+                    <select name='' class='content'>
+                    <option value="Yellow Cake">Yellow Cake</option>
+                    <option value="White Cake">White Cake</option>
+                    <option value="Chocolate Cake">Chocolate Cake</option>
+                    <option value="Custom">Custom</option>
+                    </select></p>
+                    <p><input type="submit" class="btn btn-default content" value="Add to Cart"></p>
+                </div>
+                <div class="col-md-6">
+                    <%= image_tag("products/halloween_cupcakes.jpg", width: "200px", height: "200px") %>
+                    <p class ="content"> QTY : 24 </p>
+                    <p class ="content">$64.50</p>
+                    <p class ="content"><label>Pick a Flavor:</label>
+                    <select name='' class='content'>
+                    <option value="Yellow Cake">Yellow Cake</option>
+                    <option value="White Cake">White Cake</option>
+                    <option value="Chocolate Cake">Chocolate Cake</option>
+                    <option value="Custom">Custom</option>
+                    </select></p>
+                    <p><input type="submit" class="btn btn-default content" value="Add to Cart"></p>
+                </div>
+            </div>
+                <div class=“row” id="cakepops">
+                    <h2>Cake Pops</h2>
+                  <div class="col-md-6">
+                      <%= image_tag("products/cakepops.JPG", width: "200px", height: "200px") %>
+                      <p class ="content"> QTY : 12 </p>
+                      <p class ="content">$33.99</p>
+                      <p class ="content"><label>Pick a Flavor:</label>
+                      <select name='' class='content'>
+                      <option value="Yellow Cake">Yellow Cake</option>
+                      <option value="White Cake">White Cake</option>
+                      <option value="Chocolate Cake">Chocolate Cake</option>
+                      <option value="Custom">Custom</option>
+                      </select></p>
+                      <p><input type="submit" class="btn btn-default content" value="Add to Cart"></p>
+                  </div>
+                  <div class="col-md-6">
+                      <%= image_tag("products/cakepops.JPG", width: "200px", height: "200px") %>
+                      <p class ="content"> QTY : 24 </p>
+                      <p class ="content">$66.50</p>
+                      <p class ="content"><label>Pick a Flavor:</label>
+                      <select name='' class='content'>
+                      <option value="Yellow Cake">Yellow Cake</option>
+                      <option value="White Cake">White Cake</option>
+                      <option value="Chocolate Cake">Chocolate Cake</option>
+                      <option value="Custom">Custom</option>
+                      </select></p>
+                      <p><input type="submit" class="btn btn-default content" value="Add to Cart"></p>
+                  </div>
+              </div>
 
-  <div class=“menu”>
-    <span><%= image_tag("products/cupcakes.JPG", width: "230px", height: "250px") %></span>
-    <span><%= image_tag("products/cakepops.JPG", width: "230px", height: "250px") %></span>
-    <span><%= image_tag("products/macaroons.JPG", width: "230px", height: "250px") %></span>
-    <span><%= image_tag("products/cookies.JPG", width: "230px", height: "250px") %></span>
+                  <div class=“row” id="chocolate_covered">
+                      <h2>Chocolate Covered Strawberries</h2>
+                    <div class="col-md-6">
+                        <%= image_tag("products/strawberry_chocolate.jpg", width: "200px", height: "200px") %>
+                        <p class ="content"> QTY : 12 </p>
+                        <p class ="content">$36.50</p>
+                        <p><input type="submit" class="btn btn-default content" value="Add to Cart"></p>
+                    </div>
+                    <div class="col-md-6">
+                        <%= image_tag("products/strawberry_chocolates.jpg", width: "200px", height: "200px") %>
+                        <p class ="content"> QTY : 24 </p>
+                        <p class ="content">$71.50</p>
+                        <p><input type="submit" class="btn btn-default content" value="Add to Cart"></p>
+                    </div>
+                </div>
 
-      <% @products.each do |product| %>
-      <form action="/process/to_cart" method="POST">
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <input type="hidden" name="product" value="<%= product.id %>">
-        <h5><%= product.name %> - Pack of <%= product.quantity %> at $<%= product.price %>
-        <input type="submit" value="Add to Cart"> </h5>
-        <br>
-      </form>
+                  <div class=“table-responsive” id="macaroons">
+                      <h2>Macaroons</h2>
+                    <table class="table">
+                        <td><%= image_tag("products/giant_chocolate_macaroons.jpg", width: "200px", height: "200px") %>
+                        <p class ="content"> QTY : 12 </p>
+                        <p class ="content">$23.99</p>
+                        <p><input type="submit" class="btn btn-default content" value="Add to Cart"></p></td>
 
-      <% end %>
+                        <td><%= image_tag("products/giant_chocolate_macaroons.jpg", width: "200px", height: "200px") %>
+                        <p class ="content"> QTY : 24 </p>
+                        <p class ="content">$47.50</p>
+                        <p><input type="submit" class="btn btn-default content" value="Add to Cart"></p></td>
 
-</div>
+                        <td><%= image_tag("products/giant_chocolate_macaroons.jpg", width: "200px", height: "200px") %>
+                        <p class ="content"> QTY : 36 </p>
+                        <p class ="content">$70.99</p>
+                        <p><input type="submit" class="btn btn-default content" value="Add to Cart"></p></td>
+
+                        <td><%= image_tag("products/macaroons.JPG", width: "200px", height: "200px") %>
+                        <p class ="content"> QTY : 48 </p>
+                        <p class ="content">$94.99</p>
+                        <p><input type="submit" class="btn btn-default content" value="Add to Cart"></p></td>
+
+                        <td><%= image_tag("products/macaroons.JPG", width: "200px", height: "200px") %>
+                        <p class ="content"> QTY : 60 </p>
+                        <p class ="content">$117.99</p>
+                        <p><input type="submit" class="btn btn-default content" value="Add to Cart"></p></td>
+
+                        <td><%= image_tag("products/macaroons.JPG", width: "200px", height: "200px") %>
+                        <p class ="content"> QTY : 72 </p>
+                        <p class ="content">$139.99</p>
+                        <p><input type="submit" class="btn btn-default content" value="Add to Cart"></p></td>
+
+                        <td><%= image_tag("products/macaroons.JPG", width: "200px", height: "200px") %>
+                        <p class ="content"> QTY : 100 </p>
+                        <p class ="content">$195.99</p>
+                        <p><input type="submit" class="btn btn-default content" value="Add to Cart"></p></td>
+                    </table>
+
+                  <% @products.each do |product| %>
+                  <form action="/process/to_cart" method="POST">
+                    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                    <input type="hidden" name="product" value="<%= product.id %>">
+                    <h5><%= product.name %> - Pack of <%= product.quantity %> at $<%= product.price %>
+                    <input type="submit" value="Add to Cart"> </h5>
+                    <br>
+                  </form>
+
+                  <% end %>
+            </div>
+    </div>

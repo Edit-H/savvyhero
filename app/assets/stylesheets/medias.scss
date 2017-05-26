@@ -1,3 +1,157 @@
 // Place all the styles related to the medias controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#title {
+    font-family: 'Indulge Script';
+    font-size: 46px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+#gallery {
+    margin-top: 22px;
+}
+
+// Carousel
+.carousel-inner > .item > .image,
+.carousel-inner > .item > .image > a {
+    height: 450px;
+    margin: 0 auto;
+}
+
+#media_section {
+    width: 80%;
+}
+
+.gal {
+    font-family: 'Open Sans Condensed';
+    font-weight: 700;
+}
+
+// Videos
+.yt_link {
+    font-family: 'Open Sans Condensed';
+}
+
+#youtube_gallery {
+    text-align: center;
+    margin-top: 40px;
+}
+
+#video_gallery {
+    margin: 30px;
+    padding: 0;
+    // background: #ddd;
+}
+
+.title {
+    width: 100%;
+    max-width: 854px;
+    margin: 0 auto;
+}
+
+.caption {
+    width: 100%;
+    max-width: 854px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.vid-main-wrapper {
+    width: 90%;
+    max-width: 1100px;
+    min-width: 440px;
+    // background: #fff;
+    margin: 0 auto;
+}
+
+
+/*  VIDEO PLAYER CONTAINER
+############################### */
+.vid-container {
+    position: relative;
+    padding-bottom: 52%;
+    padding-top: 30px;
+    height: 0;
+    width:70%;
+    float:left;
+}
+
+.vid-container iframe,
+.vid-container object,
+.vid-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 360px;
+}
+
+
+/*  VIDEOS PLAYLIST
+############################### */
+.vid-list-container {
+    width: 30%;
+    height: 360px;
+    overflow: hidden;
+    float: right;
+}
+
+.vid-list-container:hover, .vid-list-container:focus {
+    overflow-y: auto;
+}
+
+ol#vid-list {
+    margin:0;
+    padding:0;
+    background: #f3f3f3;
+}
+
+ol#vid-list li {
+    list-style: none;
+    padding: 5px 0px;
+}
+
+ol#vid-list li a {
+    text-decoration: none;
+    background-color: #f3f3f3;
+    height: 55px;
+    display: block;
+    padding: 10px;
+}
+
+ol#vid-list li a:hover {
+    background-color:#666666
+}
+
+.vid-thumb {
+    float:left;
+    margin-right: 8px;
+}
+
+.active-vid {
+    background:#3A3A3A;
+}
+
+#vid-list .desc {
+    color: black;
+    font-size: 12px;
+    margin-top:5px;
+    font-family: 'Open Sans Condensed';
+    font-weight: 700;
+}
+
+@media (max-width: 624px) {
+    #video_gallery {
+        margin: 15px;
+    }
+    .caption {
+        margin-top: 40px;
+    }
+    .vid-list-container {
+        padding-bottom: 20px;
+    }
+}
